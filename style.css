@@ -1989,9 +1989,27 @@ ul   { list-style:none }
    20. FINAL CTA
 ══════════════════════════════════════ */
 .fcta {
-    background: var(--plum);
+    background-color: #0A1119;
     padding: 0; border-top-left-radius: 100px;
+    position: relative; overflow: hidden; isolation: isolate;
 }
+.fcta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url('img/secion-bg.png');
+  background-size: cover;
+  background-position: center center;
+  opacity: 1;
+  mix-blend-mode: screen;
+  pointer-events: none; z-index: 0;
+}
+.fcta::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,17,25,0.92) 0%, rgba(10,17,25,0.80) 50%, rgba(10,17,25,0.90) 100%);
+  pointer-events: none; z-index: 0;
+}
+.fcta > .wrap { position: relative; z-index: 1 }
 .fcta__inner {
   display:flex; align-items:center; justify-content:space-between;
   gap:48px; min-height:160px; padding:32px 0;
@@ -2016,7 +2034,7 @@ ul   { list-style:none }
 .footer::before {
   content: '';
   position: absolute; inset: 0;
-/*  background-image: url('img/secion-bg.png');*/
+  background-image: url('img/secion-bg.png');
   background-size: cover;
   background-position: center center;
   opacity: 1;
