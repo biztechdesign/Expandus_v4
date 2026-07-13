@@ -526,6 +526,9 @@ ul   { list-style:none }
   transition:opacity 0.2s ease 0.12s, visibility 0.2s ease 0.12s, transform 0.18s ease 0.12s;
   pointer-events:none; border:1px solid rgba(0,0,0,0.08);
 }
+.nav__drop::before {
+  content:''; position:absolute; top:-8px; left:0; right:0; height:8px;
+}
 .nav__item:hover .nav__drop {
   opacity:1; visibility:visible; transform:translateY(0);
   pointer-events:auto; transition-delay:0s;
